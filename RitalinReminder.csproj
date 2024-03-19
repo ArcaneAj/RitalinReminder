@@ -9,7 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="background.jpg" />
+    <None Remove="background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentScheduler" Version="5.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="background.jpg" />
+    <Resource Include="background.png" />
   </ItemGroup>
 
 </Project>

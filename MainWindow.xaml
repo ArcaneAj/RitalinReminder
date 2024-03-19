@@ -10,14 +10,21 @@
         WindowStyle="None"
         Topmost="True"
         Height="450"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
         Width="800">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="CloseCommandHandler"/>
     </Window.CommandBindings>
-    <StackPanel Name="MainStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Label x:Name="label" Content="Take your ritalin" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    <Window.Background>
+        <ImageBrush ImageSource="background.png"></ImageBrush>
+    </Window.Background>
+    <StackPanel Name="MainStackPanel" VerticalAlignment="Center" HorizontalAlignment="Center" Width="450" Height="100" Background="Black">
+        <Label x:Name="label" Content="Take your ritalin" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="48" FontWeight="Bold"/>
         <Button Command="ApplicationCommands.Close" 
-                Content="Close Window" Width="200"/>
+                Content="I have!" Width="200"/>
     </StackPanel>
 </Window>

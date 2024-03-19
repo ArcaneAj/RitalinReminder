@@ -17,6 +17,7 @@ namespace RitalinReminder
             JobManager.AddJob(
                 this.DoScheduledWork,
                 schedule => schedule.ToRunEvery(1).Days().At(14, 0));
+            //schedule => schedule.ToRunNow().AndEvery(10).Seconds());
         }
 
         private void DoScheduledWork()
