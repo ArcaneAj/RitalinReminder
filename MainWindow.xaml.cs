@@ -11,13 +11,12 @@ namespace RitalinReminder
     {
         public MainWindow()
         {
-            var today = DateTime.Today.AddHours(14); // 2pm
             InitializeComponent();
             this.Hide();
+            JobManager.Initialize();
             JobManager.AddJob(
                 this.DoScheduledWork,
-                schedule => schedule.ToRunOnceAt(today).AndEvery(1).Days());
-            //schedule => schedule.ToRunNow().AndEvery(10).Seconds());
+                schedule => schedule.ToRunEvery(1).Days().At(14, 0));
         }
 
         private void DoScheduledWork()
@@ -33,7 +32,7 @@ namespace RitalinReminder
 
         private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }
